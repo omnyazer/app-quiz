@@ -1,24 +1,24 @@
 const quizData = [
-    {
+   {
       id: 1,
+      category: "Math",
       question: "Combien font 2+2 ?",
       answer: "4",
-      category: "Math",
-      isCorrect: null, 
+      validation: null,
     },
     {
       id: 2,
-      question: "Quelle est la formule de l’eau ?",
-      answer: "H2O",
       category: "Science",
-      isCorrect: null,
+      question: "Quelle est la formule de l'eau ?",
+      answer: "H2O",
+      validation: null,
     },
     {
       id: 3,
-      question: "Qui a découvert l’Amérique ?",
-      answer: "Christophe Colomb",
       category: "Histoire",
-      isCorrect: null,
+      question: "Qui a découvert l'Amérique ?",
+      answer: "Christophe Colomb",
+      validation: null,
     },
   ];
   

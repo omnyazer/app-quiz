@@ -1,12 +1,11 @@
-import { Accordion, Card, Button } from "react-bootstrap";
-import { QuizContext } from "../context/QuizContext";
-import QuestionItem from "./QuestionItem";
 import { useQuiz } from "../hooks/useQuiz";
+import { Accordion } from "react-bootstrap";
+import QuestionItem from "./QuestionItem";
 
 function QuizAccordion({ selectedCategory }) {
-  const { state } = useQuiz(); 
+  const { state } = useQuiz();
 
-
+  // Filtrer les questions selon la catégorie sélectionnée
   const filteredQuestions = state.filter(
     (question) => selectedCategory === "Toutes" || question.category === selectedCategory
   );
@@ -16,9 +15,10 @@ function QuizAccordion({ selectedCategory }) {
       {filteredQuestions.map((question, index) => (
         <Accordion.Item eventKey={index.toString()} key={question.id}>
           <Accordion.Header>
-            {question.question} {question.isCorrect !== null && (
-              <span style={{ marginLeft: "10px", color: question.isCorrect ? "green" : "red" }}>
-                {question.isCorrect ? "Juste ✅" : "Faux ❌"}
+            {question.question} 
+            {typeof question.validation === "boolean" && (
+              <span style={{ marginLeft: "10px", color: question.validation ? "green" : "red" }}>
+                {question.validation ? "Juste ✅" : "Faux ❌"}
               </span>
             )}
           </Accordion.Header>
