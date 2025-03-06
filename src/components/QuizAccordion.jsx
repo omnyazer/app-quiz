@@ -5,7 +5,6 @@ import QuestionItem from "./QuestionItem";
 function QuizAccordion({ selectedCategory }) {
   const { state } = useQuiz();
 
-  // Filtrer les questions selon la catégorie sélectionnée
   const filteredQuestions = state.filter(
     (question) => selectedCategory === "Toutes" || question.category === selectedCategory
   );
