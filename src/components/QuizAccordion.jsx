@@ -1,10 +1,11 @@
-import { useContext } from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 import { QuizContext } from "../context/QuizContext";
 import QuestionItem from "./QuestionItem";
+import { useQuiz } from "../hooks/useQuiz";
 
 function QuizAccordion({ selectedCategory }) {
-  const { state } = useContext(QuizContext);
+  const { state } = useQuiz(); 
+
 
   const filteredQuestions = state.filter(
     (question) => selectedCategory === "Toutes" || question.category === selectedCategory

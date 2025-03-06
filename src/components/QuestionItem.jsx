@@ -1,9 +1,9 @@
-import { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { QuizContext } from "../context/QuizContext";
+import { useQuiz } from "../hooks/useQuiz";
 
 function QuestionItem({ question }) {
-  const { dispatch } = useContext(QuizContext);
+  const { dispatch } = useQuiz(); 
+
 
   const handleAnswer = (isCorrect) => {
     dispatch({ type: "VALIDATE_ANSWER", payload: { id: question.id, isCorrect } });
